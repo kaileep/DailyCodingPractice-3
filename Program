@@ -1,0 +1,22 @@
+import sys
+  
+def lowest_num(array):
+        greatest_num = sys.maxsize
+        for num in array:
+                if abs(num) < greatest_num and is_in_array(array, abs(num)+1) == False:
+                        greatest_num = abs(num)+1
+        return greatest_num
+
+def is_in_array(nums, num):
+        for n in nums:
+                if n == num:
+                        return True
+        return False
+
+def main():
+        nums = [0,2,1]
+        print lowest_num(nums)
+
+
+if __name__ == "__main__":
+        main()
